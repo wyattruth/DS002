@@ -72,3 +72,31 @@ def distance(v: Vector, w: Vector) -> float:  # type: ignore
     return magnitude(subtract(v, w))
 
 
+assert add([1, 2, 3], [4, 5, 6]) == [5, 7, 9]
+assert subtract([5, 7, 9], [4, 5, 6]) == [1, 2, 3]
+assert vector_sum([[1, 2], [3, 4], [5, 6], [7, 8]]) == [16, 20]
+assert scalar_multiply(2, [1, 2, 3]) == [2, 4, 6]
+assert vector_mean([[1, 2], [3, 4], [5, 6]]) == [3, 4]
+assert dot([1, 2, 3], [4, 5, 6]) == 32  # 1 * 4 + 2 * 5 + 3 * 6
+assert sum_of_squares([1, 2, 3]) == 14  # 1 * 1 + 2 * 2 + 3 * 3
+assert magnitude([3, 4]) == 5
+assert shape([[1, 2, 3], [4, 5, 6]]) == (2, 3)  # 2 rows, 3 columns
+assert distance([1,1],[4,1]) == 3.0
+assert squared_distance([1,2,3],[2,3,4]) == 3
+assert scalar_multiply(2, [1,2,3]) == [2,4,6]
+assert magnitude([0,0,4,3]) == 5.0
+
+# Work on an Identity Matrix
+id = [  [1, 0, 0, 0, 0],
+        [0, 1, 0, 0, 0],
+        [0, 0, 1, 0, 0],
+        [0, 0, 0, 1, 0],
+        [0, 0, 0, 0, 1] ]
+
+assert get_column(id,2) == [0, 0, 1, 0, 0]
+assert get_row(id,2) == [0, 0, 1, 0, 0]
+assert get_column(id,2) == get_row(id,2)
+assert identity_matrix(5) == id
+assert make_matrix(5,5, lambda i,j: 1 if i == j else 0) == id
+assert shape(id) == (5,5)
+
